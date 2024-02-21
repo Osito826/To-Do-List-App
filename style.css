@@ -1,0 +1,175 @@
+/*Defined global CSS variables*/
+:root {
+    --gradient: linear-gradient(to top, red, blue);
+    --dark: #001747;
+    --grey: #b1bacb;
+    --grey-border: rgba(210, 210, 210, 0.75);
+    --grey-light: #eeeeee;
+    --grey-dark: #405175;
+    --blue: #2d70fd;
+    --green: #00d8a7;
+    --white: #ffffff;
+}
+
+body {
+    /*Sets space around all sides */
+    margin: 0;
+    /*Takes up 100% of the viewport height */
+    height: 100vh;
+    background: var(--gradient);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+.button {
+    font-size: 1.2rem;
+    color: var(--white);
+    background-color: var(--blue);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: var(--white);
+    height: 60%;
+    width: 70%;
+    border-radius: 3rem;
+    padding: 3rem;
+    max-width: 30rem;
+    box-shadow: 0rem 1rem 4rem 1rem;
+}
+
+h2 {
+    text-align: center;
+    height: 2rem;
+    color: var(--dark);
+}
+
+.myInput {
+    position: relative;
+    display: flex;
+}
+
+.input-field {
+    padding: 1.3rem;
+    border: 0.1rem solid var(--grey-light);
+    border-radius: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+    color: var(--grey)
+}
+/*Dont exist yet, but will be added thru javascript*/
+.todo-container {
+    display: flex;
+    gap: 1rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+/*Targets all the paragraphs in todoList, which does not exist yet but will be added thru javascript*/
+#todoList p {
+    display: flex;
+    color: var(--dark);
+    align-items: center;
+    gap: 1rem;
+}
+
+#todoList .disabled {
+    color: darkgray;
+}
+/*Does not exist yet, will be added thru javascript whenever a todo is checkmarked*/
+.disabled {
+    display: flex;
+    text-decoration: line-through;
+}
+/*Does not exist yet, will be added thru javascript*/
+input[type="checkbox"] {
+    appearance: none;
+    cursor: pointer;
+}
+
+/*Does not exist yet, will be added thru javascript/Targeting before it is checked*/
+input[type="checkbox"]::before {
+    display: inline-block;
+    content: "\2713";
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 0.05rem solid var(--grey-border);
+    border-radius: 50%;
+    color: transparent;
+}
+/*Does not exist yet, will be added thru javascript/Targeting after it is checked*/
+input[type="checkbox"]:checked::before {
+    color: var(--white);
+    background-color: var(--green);
+    border-radius: 50%;
+    border: 0.05rem solid var(--green);
+}
+
+.counter {
+    border: 0.06rem solid var(--grey-light);
+}
+
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    height: 2.5rem;
+    color: var(--grey);
+}
+
+.counter-container p {
+    align-self: center;
+}
+
+.counter-container button {
+    font-size: 1rem;
+    color: var(--grey);
+    background-color: transparent;
+    border: none;
+}
+
+.scroll {
+    height: 15rem;
+    scrollbar-width: thin;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: var(--blue);
+}
+
+.scroll::-webkit-scrollbar-track {
+    display: none;
+}
